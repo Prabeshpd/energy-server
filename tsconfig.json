@@ -31,7 +31,8 @@
       "@/repositories/*": ["./src/repositories/*"],
       "@/routes/*": ["./src/routes/*"],
       "@/services/*": ["./src/services/*"],
-      "@/types/*": ["./src/types/*"]
+      "@/types/*": ["./src/types/*"],
+      "@/test/*": ["./test/*"]
     }
   },
   "include": ["**/*.ts"],
