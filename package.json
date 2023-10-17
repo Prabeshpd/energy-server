@@ -11,7 +11,7 @@
     "start": "node dist/server.js",
     "start:dev": "nodemon | pino-pretty",
     "prettify": "prettier --write .",
-    "test": "TS_NODE_FILES=true mocha -r ts-node/register -r tsconfig-paths/register ./src/**/*.test.ts --exit"
+    "test": "TS_NODE_FILES=true mocha -r ts-node/register -r tsconfig-paths/register '{,!(node_modules)/**/}*.test.ts' --exit"
   },
   "dependencies": {
     "@prisma/client": "^5.4.2",
