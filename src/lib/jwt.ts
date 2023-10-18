@@ -1,11 +1,8 @@
 import * as jwt from 'jsonwebtoken';
 
-import { User } from '@prisma/client';
-
 import config from '@/config/config';
 import * as object from '@/helpers/object';
-
-export type UserDetail = Omit<User, 'password'>;
+import { UserDetail } from '@/types/types';
 
 export interface AccessTokens {
   accessToken: string;

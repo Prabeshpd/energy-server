@@ -2,8 +2,9 @@ import 'mocha';
 import { expect } from 'chai';
 
 import { userFactory } from '@/test/factories/user';
+import { UserDetail } from '@/types/types';
 
-import { decode, generateAccessToken, generateRefreshToken, UserDetail } from './jwt';
+import { decode, generateAccessToken, generateRefreshToken } from './jwt';
 
 describe('Utils: jwt', () => {
   const userDetail = userFactory();

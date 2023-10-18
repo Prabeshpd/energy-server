@@ -25,3 +25,7 @@ export async function createUser(payload: Prisma.UserCreateInput) {
 
   return userRepository.createUser(userPayload);
 }
+
+export async function findByEmail(email: string) {
+  return userRepository.findByEmail(email);
+}
