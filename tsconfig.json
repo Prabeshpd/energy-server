@@ -28,8 +28,10 @@
       "@/controllers/*": ["./src/controllers/*"],
       "@/helpers/*": ["./src/helpers/*"],
       "@/lib/*": ["./src/lib/*"],
+      "@/middlewares/*": ["./src/middlewares/*"],
       "@/repositories/*": ["./src/repositories/*"],
       "@/routes/*": ["./src/routes/*"],
+      "@/schemas/*": ["./src/schemas/*"],
       "@/services/*": ["./src/services/*"],
       "@/types/*": ["./src/types/*"],
       "@/test/*": ["./test/*"]
