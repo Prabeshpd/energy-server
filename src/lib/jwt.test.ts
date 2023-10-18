@@ -6,7 +6,7 @@ import { UserDetail } from '@/types/types';
 
 import { decode, generateAccessToken, generateRefreshToken } from './jwt';
 
-describe('Utils: jwt', () => {
+describe('Generates Json Web Tokens', () => {
   const userDetail = userFactory();
 
   describe('generateAccessToken()', () => {
