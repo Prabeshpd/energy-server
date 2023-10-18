@@ -39,7 +39,6 @@ describe('User:', () => {
           email: 'unique.user@gmail.com',
           password: user.password
         };
-
         await createUser(userPayload);
 
         await expect(createUser(userPayload)).to.be.eventually.rejected.and.to.haveOwnProperty(
