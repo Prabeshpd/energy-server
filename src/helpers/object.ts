@@ -15,7 +15,6 @@ export function listWithoutAttrs<T>(obj: object[], attrsToExclude: any[]): T[] {
 
 export function withoutAttrs<T>(obj: any, attrsToExclude: any[]): T {
   if (Array.isArray(obj)) {
-    // It is recommended to use listWithoutAttrs() function instead for arrays.
     throw new TypeError('withoutAttrs() expects first argument to be a plain object, array given.');
   }
 
