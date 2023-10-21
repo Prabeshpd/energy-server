@@ -9,4 +9,4 @@ export const createUser = async (userAttributes: Prisma.UserCreateInput, transac
 
 export const findByEmail = async (email: string) => dbClient.user.findUnique({ where: { email } });
 
-export const findById = async (id: number) => dbClient.user.findUnique({ where: { id } });
+export const findById = async (id: string) => dbClient.user.findUnique({ where: { id } });
