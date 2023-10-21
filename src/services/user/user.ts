@@ -27,5 +27,11 @@ export async function createUser(payload: Prisma.UserCreateInput) {
 }
 
 export async function findByEmail(email: string) {
+  // TODO Add error
   return userRepository.findByEmail(email);
+}
+
+export async function findById(id: string) {
+  // TODO Add error
+  return userRepository.findById(id);
 }
