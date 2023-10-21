@@ -12,6 +12,7 @@
     "start:dev": "nodemon | pino-pretty",
     "prettify": "prettier --write .",
     "test:migrate": "dotenv -e .env.test prisma migrate deploy",
+    "seed": "ts-node -r tsconfig-paths/register ./seed/seed.ts",
     "test": "TS_NODE_FILES=true mocha -r ts-node/register -r tsconfig-paths/register -r dotenv/config '{,!(node_modules)/**/}*.test.ts' --exit dotenv_config_path=.env.test"
   },
   "dependencies": {
