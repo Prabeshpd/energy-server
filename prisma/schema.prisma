@@ -34,8 +34,8 @@ model Project {
 }
 
 model ProjectHistory {
-  userId            String        @db.Uuid @map("user_id")
-  projectId         String        @db.Uuid @map("project_id")
+  userId            String        @db.Text @map("user_id")
+  projectId         String        @db.Text @map("project_id")
   energyConsumption Int           @map("energy_consuption")
   time              DateTime    
 

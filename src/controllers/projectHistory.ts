@@ -11,9 +11,7 @@ export async function fetchProjectHistories(request: Request, response: Response
     const userId = authorizedRequest.user.id;
 
     const query = request.query as unknown as Query;
-
     const data = await projectHistoryService.listProjects(userId, query);
-
     return response.status(httpStatusCode.OK).json(data);
   } catch (err: any) {
     const statusCode = httpStatusCode.UNPROCESSABLE_ENTITY;

@@ -3,8 +3,8 @@ import { Router } from 'express';
 import * as projectHistoryController from '@/controllers/projectHistory';
 import authenticate from '@/middlewares/auth';
 
-const projectRouter = Router();
+const projectHistoryRouter = Router();
 
-projectRouter.get('/', authenticate, projectHistoryController.fetchProjectHistories);
+projectHistoryRouter.get('/', authenticate, projectHistoryController.fetchProjectHistories);
 
-export default projectRouter;
+export default projectHistoryRouter;
