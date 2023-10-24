@@ -1,0 +1,11 @@
+version: '3.2'
+
+services:
+  web:
+    container_name: energy_server
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ${DOCKER_REGISTRY}/${DOCKER_IMAGE}:${VERSION}
+    environment:
+      - NODE_ENV=production

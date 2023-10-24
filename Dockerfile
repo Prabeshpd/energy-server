@@ -30,7 +30,7 @@ ENV NODE_ENV production
 WORKDIR /app
     
 COPY --from=builder /app/dist /app/dist
-COPY --from=prod-dependencies /app/node_modules /app/node_modules
+COPY --from=builder /app/node_modules /app/node_modules
 
 EXPOSE $PORT
 
