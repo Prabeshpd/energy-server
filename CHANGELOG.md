@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/Prabeshpd/energy-server/compare/energy-server@1.0.0...energy-server@1.1.0) (2023-10-24)
+
+
+### Features
+
+* Add cd pipeline ([ee703a4](https://github.com/Prabeshpd/energy-server/commit/ee703a4eab21c3e322c621b781ca6be03128a863))
+
 # 1.0.0 (2023-10-24)
 
 
