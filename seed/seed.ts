@@ -3,7 +3,7 @@ import { createUser } from '@/services/user/user';
 
 import { projects } from './fixtures/projects';
 
-import { projectHistory } from './fixtures/projectHistory';
+import { generateProjectHistoryData } from './fixtures/projectHistory';
 
 export const seedProjectData = async () => {
   try {
@@ -13,6 +13,8 @@ export const seedProjectData = async () => {
       email: 'defaultUser@gmail.com',
       password: 'Password@123'
     };
+
+    const projectHistory = generateProjectHistoryData();
 
     await createUser(user);
     console.log('-----------------------Seeded User-------------------------');
