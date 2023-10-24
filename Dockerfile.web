@@ -1,0 +1,7 @@
+ARG DOCKER_REGISTRY=docker.io
+ARG DOCKER_IMAGE=prabesh1995/energy-server
+ARG VERSION=latest
+
+FROM ${DOCKER_REGISTRY}/${DOCKER_IMAGE}:${VERSION}
+
+CMD ["node", "dist/src/server.js"]
