@@ -1,0 +1,67 @@
+name: Energy Server Release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release-artifact:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Use Node 18
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          registry-url: 'https://npm.pkg.github.com'
+          cache: 'yarn'
+          cache-dependency-path: ./yarn.lock
+
+      - name: Setup
+        run: |
+          yarn install --frozen-lockfile
+          yarn build
+
+      - name: Create Build Artifacts
+        id: create_build_artifact
+        run: |
+          BUILD_NUM=$(echo $GITHUB_RUN_NUMBER)
+          BUILD_ID=$(echo $GITHUB_SHA | head -c7)
+          VERSION=node_express+build.${BUILD_NUM}.${BUILD_ID}
+          ARTIFACT_NAME=${VERSION}.zip
+          cp package.json dist/
+          (cd dist && zip -r9q ${{ github.workspace }}/${ARTIFACT_NAME} .)
+          ls -al ${{ github.workspace }}
+          echo "version=${VERSION}" >> $GITHUB_ENV
+          echo "artifact_name=${ARTIFACT_NAME}" >> $GITHUB_ENV
+
+      - name: Upload Build Artifacts to GitHub
+        uses: actions/upload-artifact@v2
+        with:
+          name: ${{ env.version }}
+          path: ./${{ env.artifact_name }}
+          retention-days: 14
+
+      - name: Release
+        env:
+          GH_TOKEN: ${{ secrets.ACTION_TOKEN }}
+        run: yarn semantic-release
+
+      - name: Get tag
+        id: get_tag
+        uses: 'WyriHaximus/github-action-get-previous-tag@v1'
+        with:
+          fallback: 1.0.0
+
+      - name: Create Release Artifact
+        id: create_release_artifact
+        run: |
+          VERSION=${{ steps.get_tag.outputs.tag }}
+          ARTIFACT_NAME=${VERSION}.zip
+          cp package.json dist/
+          (cd dist && zip -r9q ${{ github.workspace }}/${ARTIFACT_NAME} .)
+          ls -al ${{ github.workspace }}
+          echo "release_artifact_name=${ARTIFACT_NAME}" >> $GITHUB_ENV
