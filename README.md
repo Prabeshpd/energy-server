@@ -31,6 +31,12 @@ cd energy-server
 
   Server will run at port 3001
 
+  For Seeding
+
+  ```bash
+   yarn seed
+  ```
+
 - ### Test Application
 
   ```bash
@@ -57,7 +63,15 @@ cd energy-server
    yarn install
    ```
 
-2. Run the development server:
+2. Seed Database
+
+   ```bash
+
+   yarn seed
+
+   ```
+
+3. Run the development server:
 
    ```bash
    npm run dev
