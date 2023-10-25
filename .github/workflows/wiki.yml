@@ -18,6 +18,6 @@ jobs:
           ACTION_MAIL: prabesh1995nepalktm@gmail.com
           ACTION_NAME: prabeshpd
           OWNER: prabeshpd
-          REPO_NAME: energy_client
+          REPO_NAME: energy-server
           MD_FOLDER: .github/wiki
           WIKI_PUSH_MESSAGE: Push from Github action
